@@ -7,7 +7,7 @@
 //used for the speaker
 #include "pitches.h"
 
-const int NUMBER_OF_WORDS = 19; //always 26 words
+const int NUMBER_OF_WORDS = 19; //always 19 words
 
 //word bank of unscrambled words
 String wordList[NUMBER_OF_WORDS] = {"CINCINNATI", "HACKER", "PROGRAMMING", "MICROCONTROLLER",
@@ -31,7 +31,7 @@ String scrambledWord;     //the wordOfInterest scrambled;
 bool isCorrect;           //holds if the user's unscramble guess was correct
 int index = 0;          //keeps the index value in the wordList and scrambledWordList
 int column = 0;        //keeps track of what column the cursor is in on the display
-const int DESIRED_SCORE = 5;    //desired user score, get congrats message when achieved.
+const int DESIRED_SCORE = 2;    //desired user score, get congrats message when achieved.
 
 
 //initializes the LiquidCrystal object to correct digital pins
@@ -176,7 +176,10 @@ char convert(char inputKey) {
       letterCode = inputKey - '0';
       placeholderDigit = 1;  
     } 
-    if (not((letterCode == 22)|| (letterCode == 222)|| (letterCode == 33)|| (letterCode == 333)|| (letterCode == 44)|| (letterCode == 444)|| (letterCode == 55)|| (letterCode == 555)|| (letterCode == 66)|| (letterCode == 666)|| (letterCode == 77)|| (letterCode == 777)|| (letterCode == 7777)|| (letterCode == 88)|| (letterCode == 888)|| (letterCode == 99)|| (letterCode == 999)|| (letterCode == 9999))){
+    if (not((letterCode == 22)|| (letterCode == 222)|| (letterCode == 33)|| (letterCode == 333)|| 
+    (letterCode == 44)|| (letterCode == 444)|| (letterCode == 55)|| (letterCode == 555)|| (letterCode == 66)|| 
+    (letterCode == 666)|| (letterCode == 77)|| (letterCode == 777)|| (letterCode == 7777)|| (letterCode == 88)|| 
+    (letterCode == 888)|| (letterCode == 99)|| (letterCode == 999)|| (letterCode == 9999))){
       letterCode = inputKey - '0';
       placeholderDigit = 1;
     }
